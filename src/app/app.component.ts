@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ejemplologin';
+  public currentPosition:number = 0;
+
+  public nextStep():void{
+    this.currentPosition++;
+  }
+  public previousStep():void{
+    this.currentPosition--;
+  }
 }
