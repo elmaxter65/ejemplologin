@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Formone } from './shared/interfaces/formone';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,16 @@ export class AppComponent {
     name:'',
     lastName:''
   };
+  constructor(private spinner: NgxSpinnerService) {
+  }
+  
+  ngOnInit() {
+    this.spinner.show();
+ 
+    setTimeout(() => {
+        this.spinner.hide();
+    }, 5000);
+  }
 
   public nextStep():void{
     this.currentPosition++;
@@ -26,4 +37,5 @@ export class AppComponent {
     this.buttomValidate = formState[0];
     this.formOneData = formState[1];
   }
+
 }
