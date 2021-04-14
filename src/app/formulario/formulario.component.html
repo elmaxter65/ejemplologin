@@ -1,0 +1,13 @@
+<h1>Formulario</h1>
+
+<ng-container>
+  <app-step1 *ngIf="currentPosition == 0" [formParent]="formOneData" (saveForm)="getEmmitStepOneComponent($event)"></app-step1>
+  <app-step2 *ngIf="currentPosition == 1"></app-step2>
+  <app-step3 *ngIf="currentPosition == 2"></app-step3>
+  <app-step4 *ngIf="currentPosition == 3"></app-step4>
+</ng-container>
+
+<ngx-spinner></ngx-spinner>
+
+<button (click)="previousStep()" *ngIf="currentPosition > 0">< paso anterior</button>
+<button (click)="nextStep()" *ngIf="currentPosition < 3" [disabled]="!buttomValidate">paso siguiente ></button>
