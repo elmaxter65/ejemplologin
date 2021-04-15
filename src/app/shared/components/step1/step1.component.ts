@@ -32,4 +32,6 @@ export class Step1Component implements OnInit {
     });
   }
 
+  get f() { return this.formTest.controls; }
+
 }

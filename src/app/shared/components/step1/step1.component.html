@@ -1,5 +1,25 @@
 <form [formGroup]="formTest" class="flex-container">
+    <h3>Nombre</h3>
     <input formControlName="name">
+    <div *ngIf="f.name.errors?.required">
+        <span style="color: red;">Nombre requerido</span>
+    </div>
+    <div *ngIf="f.name.errors?.minlength">
+        <span style="color: red;">Minimmo de caracteres 2</span>
+    </div>
+    <div *ngIf="f.name.errors?.maxlength">
+        <span style="color: red;">Maximo de caracteres 15</span>
+    </div>
+    <h3>Apellido</h3>
     <input formControlName="lastName">
+    <div *ngIf="f.lastName.errors?.required">
+        <span style="color: red;">Apellido requerido</span>
+    </div>
+    <div *ngIf="f.lastName.errors?.minlength">
+        <span style="color: red;">Minimmo de caracteres 2</span>
+    </div>
+    <div *ngIf="f.lastName.errors?.maxlength">
+        <span style="color: red;">Maximo de caracteres 15</span>
+    </div>
 </form>
 
