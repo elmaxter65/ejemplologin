@@ -2,7 +2,7 @@
     <h3>Nombre</h3>
     <input formControlName="name">
     <div *ngIf="f.name.errors?.required">
-        <span style="color: red;">Nombre requerido</span>
+        <span style="color: red;"> {{ 'error.name' | translate}} </span>
     </div>
     <div *ngIf="f.name.errors?.minlength">
         <span style="color: red;">Minimmo de caracteres 2</span>

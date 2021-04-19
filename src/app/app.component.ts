@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Formone } from './shared/interfaces/formone';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ export class AppComponent {
     name:'',
     lastName:''
   };
-  constructor(private spinner: NgxSpinnerService) {
+  constructor(private spinner: NgxSpinnerService,private translate: TranslateService) {
+    translate.setDefaultLang('en');
   }
   
   ngOnInit() {
